@@ -13,8 +13,8 @@ const C_StartModal = {
 		});
 
 		gsap.to(container, {
-			delay: 1.5,
-			duration: 3,
+			delay: 1,
+			duration: 4,
 			ease: "sine.inOut",
 			opacity: 1,
 		});
@@ -24,7 +24,7 @@ const C_StartModal = {
 		return Mithril("div", {id: "startModal"}, [
 			Mithril("img", {src: pklwrksLogo}),
 			Mithril("div", {class: "inner"}, [
-				Mithril("h1", "pklwrks llc"),
+				Mithril("h1", "pklwrks LLC"),
 				Mithril("h4", "what: video game / software engineering studio"),
 				Mithril("h4", "who: jd@pklwrks.xyz")
 			])

@@ -59,7 +59,7 @@ const C_BackgroundSketch = {
 						let currentGridElement = gridElements[currentRow][currentCol];
 						let distToMouse = p.dist(currentGridElement.x, currentGridElement.y, p.mouseX, p.mouseY);
 
-						if (p.mouseX && p.mouseY && distToMouse < 128) {
+						if (p.mouseX && p.mouseY && distToMouse < ((spacingX + spacingY) / 2) * 3) {
 							currentGridElement.rot = p.atan2(
 								p.mouseY - currentGridElement.y, 
 								p.mouseX - currentGridElement.x
