@@ -13,16 +13,16 @@ class GridElement {
 		this.randFactor = _randFactor;
 	}
 
-	draw(p : p5, spacing: number): void {
+	draw(p : p5, spacingX: number, spacingY: number): void {
 		p.push();
 		p.stroke(255);
-		p.translate(this.x + spacing / 2, this.y + spacing / 2);
+		p.translate(this.x + spacingX / 2, this.y + spacingY / 2);
 		p.rotate(this.rot);
 		if (this.randFactor < 0.5) {
-			p.line(-spacing / 2, -spacing / 2, spacing / 2, spacing / 2);
+			p.line(-spacingX / 2, -spacingY / 2, spacingX / 2, spacingY / 2);
 		}
 		else {
-			p.line(-spacing / 2, spacing / 2, spacing / 2, -spacing / 2);
+			p.line(-spacingX / 2, spacingY / 2, spacingX / 2, -spacingY / 2);
 		}
 		p.pop();
 	}

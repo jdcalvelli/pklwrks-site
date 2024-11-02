@@ -15,22 +15,25 @@ const C_BackgroundSketch = {
 
 			let rows: number;
 			let cols: number;
-			let spacing: number = 64;
+			let spacingX: number;
+			let spacingY: number;
 			let gridElements: GridElement[][];
 
 			p.setup = () => {
-				p.createCanvas(4096, 4096);
+				p.createCanvas(p.windowWidth, p.windowHeight);
 
-				rows = p.width / spacing;
-				cols = p.height / spacing;
+				spacingX = p.windowWidth / 16;
+				spacingY = p.windowHeight / 16;
+				rows = p.windowWidth / spacingX;
+				cols = p.windowHeight / spacingY;
 				gridElements = new Array(rows).fill(null).map(() => new Array(cols).fill(null));
 
 
 				let currentRow: number = 0;
 				let currentCol: number = 0;
 
-				for (let xPixel = 0; xPixel < p.width; xPixel += spacing) {
-					for (let yPixel = 0; yPixel < p.height; yPixel += spacing) {
+				for (let xPixel = 0; xPixel < p.windowWidth; xPixel += spacingX) {
+					for (let yPixel = 0; yPixel < p.windowHeight; yPixel += spacingY) {
 						gridElements[currentRow][currentCol] = new GridElement(
 							xPixel, 
 							yPixel, 
@@ -50,13 +53,13 @@ const C_BackgroundSketch = {
 				let currentRow = 0;
 				let currentCol = 0;
 
-				for (let xPixel = 0; xPixel < p.width; xPixel += spacing) {
-					for (let yPixel = 0; yPixel < p.height; yPixel += spacing) {
+				for (let xPixel = 0; xPixel < p.windowWidth; xPixel += spacingX) {
+					for (let yPixel = 0; yPixel < p.windowHeight; yPixel += spacingY) {
 
 						let currentGridElement = gridElements[currentRow][currentCol];
 						let distToMouse = p.dist(currentGridElement.x, currentGridElement.y, p.mouseX, p.mouseY);
 
-						if (distToMouse < spacing * 3) {
+						if (distToMouse < 128) {
 							currentGridElement.rot = p.atan2(
 								p.mouseY - currentGridElement.y, 
 								p.mouseX - currentGridElement.x
@@ -65,7 +68,7 @@ const C_BackgroundSketch = {
 						else {
 							currentGridElement.rot = 0;
 						}
-						gridElements[currentRow][currentCol].draw(p, spacing);
+						gridElements[currentRow][currentCol].draw(p, spacingX, spacingY);
 						currentCol++;
 
 					}
