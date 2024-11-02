@@ -1,0 +1,12 @@
+services:
+  pklwrks-site:
+    container_name: pklwrks-site
+    build:
+      context: .
+    restart: unless-stopped
+    networks:
+      - pklwrks
+
+networks:
+  pklwrks:
+    external: true
