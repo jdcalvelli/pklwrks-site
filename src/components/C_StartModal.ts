@@ -13,8 +13,8 @@ const C_StartModal = {
 		});
 
 		gsap.to(container, {
-			delay: 2,
-			duration: 4,
+			delay: 1.5,
+			duration: 3,
 			ease: "sine.inOut",
 			opacity: 1,
 		});
