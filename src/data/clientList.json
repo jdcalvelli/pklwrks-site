@@ -2,39 +2,48 @@
   "clientList": [
     {
       "href": "https://www.uchicago.edu",
-      "linkText": "the university of chicago"
+      "linkText": "the university of chicago",
+      "natureOfWork": "<games + web>"
     },
     {
       "href": "https://risc.uchicago.edu",
-      "linkText": "the center for risc"
+      "linkText": "the center for risc",
+      "natureOfWork": "<games + web>"
     },
       {
       "href": "https://www.createneptune.com",
-      "linkText": "create neptune"
+      "linkText": "create neptune",
+      "natureOfWork": "<games>"
     },
     {
       "href": "http://www.skyshipstudios.com",
-      "linkText": "sky ship studios"
+      "linkText": "sky ship studios",
+      "natureOfWork": "<games>"
     },
     {
       "href": "https://www.altereainc.com",
-      "linkText": "alterea"
+      "linkText": "alterea",
+      "natureOfWork": "<games + web>"
     },
     {
       "href": "https://web.mit.edu",
-      "linkText": "massachusetts institute of technology"
+      "linkText": "massachusetts institute of technology",
+      "natureOfWork": "<games + web>"
     },
     {
       "href": "https://www.ll.mit.edu",
-      "linkText": "mit lincoln laboratory"
+      "linkText": "mit lincoln laboratory",
+      "natureOfWork": "<games + web>"
     },
     {
       "href": "https://turbo.computer",
-      "linkText": "turbo game engine"
+      "linkText": "turbo game engine",
+      "natureOfWork": "<games>"
     },
     {
       "href": "mailto:jd@pklwrks.xyz?subject=interest in contracting pklwrks&body=hey pklwrks, i am X person and i'd like to contract you for Y thing. :)",
-      "linkText": "potentially you... :)"
+      "linkText": "hopefully you :)",
+      "natureOfWork": "<whatever you want>"
     }
   ]
 }

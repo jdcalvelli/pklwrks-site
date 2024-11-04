@@ -28,7 +28,15 @@
 }
 
 #clientsModal a {
-	margin: 4px;
+	margin: 16px;
+
+	font-size: 1.2rem;
+	text-decoration: none;
 
 	color: whitesmoke;
+}
+
+#clientsModal p {
+	font-size: 0.8rem;
+	font-style: italic;
 }

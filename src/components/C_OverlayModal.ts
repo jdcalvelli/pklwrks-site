@@ -8,6 +8,7 @@ interface C_Props {
 	listItems: Array<{
 		href: string,
 		linkText: string,
+		natureOfWork: string,
 	}>;
 }
 
@@ -30,7 +31,13 @@ const C_OverlayModal: m.Component<C_Props, {}> = {
 	view: (vnode: m.VnodeDOM<C_Props, {}>) => {
 		return m("div", {id: "clientsModal"}, [
 			m("h1", vnode.attrs.modalName),
-			m("div", {class: "inner"}, vnode.attrs.listItems.map((listItem) => m("a", {href: listItem.href}, listItem.linkText)))
+			m("div", {class: "inner"}, vnode.attrs.listItems.map((listItem) => {
+				return(
+					m("a", {href: listItem.href}, listItem.linkText, [
+						listItem.natureOfWork ? m("p", listItem.natureOfWork) : null
+					])
+				);
+			}))
 		])
 	},
 
