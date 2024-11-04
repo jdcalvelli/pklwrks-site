@@ -1,18 +1,20 @@
-import Mithril from "mithril";
-import gsap from "gsap";
-
+import "../styles/C_StartModal.css";
 import pklwrksLogo from "../assets/pklwrks-light-tighter.svg";
 
-const C_StartModal = {
+import m from "mithril";
+import gsap from "gsap";
 
-	oncreate: (vnode: Mithril.VnodeDOM) => {
-		let container = vnode.dom as HTMLElement;
+const C_StartModal: m.Component<{}, {}> = {
 
-		gsap.set(container, {
+	oncreate: (vnode: m.VnodeDOM) => {
+
+		let element = vnode.dom as HTMLElement;
+
+		gsap.set(element, {
 			opacity: 0
 		});
 
-		gsap.to(container, {
+		gsap.to(element, {
 			delay: 1,
 			duration: 4,
 			ease: "sine.inOut",
@@ -21,12 +23,12 @@ const C_StartModal = {
 	},
 
 	view: () => {
-		return Mithril("div", {id: "startModal"}, [
-			Mithril("img", {src: pklwrksLogo}),
-			Mithril("div", {class: "inner"}, [
-				Mithril("h1", "pklwrks LLC"),
-				Mithril("h4", "what: video game / software engineering studio"),
-				Mithril("h4", "who: jd@pklwrks.xyz")
+		return m("div", {id: "startModal"}, [
+			m("img", {src: pklwrksLogo}),
+			m("div", {class: "inner"}, [
+				m("h1", "pklwrks LLC"),
+				m("h4", "what: software and video game engineering"),
+				m("h4", "who: jd@pklwrks.xyz")
 			])
 		])	
 	}

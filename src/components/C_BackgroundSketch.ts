@@ -1,14 +1,22 @@
-import Mithril from "mithril";
+import "../styles/C_BackgroundSketch.css";
+
+import m from "mithril";
 import p5 from "p5";
+import { GridElement } from "../classes/GridElement";
+import store from "../stores/store";
 
- import { GridElement } from "../classes/GridElement";
+const C_BackgroundSketch: m.Component<{}, {}> = {
 
-const C_BackgroundSketch = {
+	oncreate: (vnode: m.VnodeDOM) => {
 
-	oncreate: (vnode : Mithril.VnodeDOM) => {
+		// element to put the sketch into!
+		let element = vnode.dom as HTMLElement;
 
-		// container to put the sketch into!
-		let container = vnode.dom as HTMLElement;
+		element.addEventListener("click", () => {
+			if (store.modalToOpen != null) {
+				store.swapModal(null);
+			}
+		});
 
 		// make a new p5 sketch
 		new p5((p: p5) => {
@@ -77,11 +85,11 @@ const C_BackgroundSketch = {
 				}
 			}
 
-		}, container);
+		}, element);
 
 	},
 
-	view: () => Mithril("#background-sketch")
+	view: () => m("#background-sketch")
 }
 
 export default C_BackgroundSketch;

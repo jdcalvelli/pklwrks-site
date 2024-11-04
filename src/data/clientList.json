@@ -1,0 +1,40 @@
+{
+  "clientList": [
+    {
+      "href": "https://www.uchicago.edu",
+      "linkText": "the university of chicago"
+    },
+    {
+      "href": "https://risc.uchicago.edu",
+      "linkText": "the center for risc"
+    },
+      {
+      "href": "https://www.createneptune.com",
+      "linkText": "create neptune"
+    },
+    {
+      "href": "http://www.skyshipstudios.com",
+      "linkText": "sky ship studios"
+    },
+    {
+      "href": "https://www.altereainc.com",
+      "linkText": "alterea"
+    },
+    {
+      "href": "https://web.mit.edu",
+      "linkText": "massachusetts institute of technology"
+    },
+    {
+      "href": "https://www.ll.mit.edu",
+      "linkText": "mit lincoln laboratory"
+    },
+    {
+      "href": "https://turbo.computer",
+      "linkText": "turbo game engine"
+    },
+    {
+      "href": "mailto:jd@pklwrks.xyz?subject=interest in contracting pklwrks&body=hey pklwrks, i am X person and i'd like to contract you for Y thing. :)",
+      "linkText": "potentially you... :)"
+    }
+  ]
+}

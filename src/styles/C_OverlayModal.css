@@ -1,0 +1,34 @@
+/* client modal related */
+
+#clientsModal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+
+	width: 256px;
+	height: 45vh;
+	background: #212121;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	transform: translate(-50%, -50%);
+}
+
+#clientsModal .inner {
+	width: 80%;
+	height: 80%;
+
+	overflow: scroll;
+
+	display: flex;
+	flex-direction: column;
+}
+
+#clientsModal a {
+	margin: 4px;
+
+	color: whitesmoke;
+}

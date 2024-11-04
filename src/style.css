@@ -7,41 +7,8 @@
 
 body {
   background: #212121;
+
+  color: whitesmoke;
+
   font-family: "Space Mono", sans-serif;
-}
-
-#background-sketch {
-  overflow: clip;
-  width: 100vw;
-  height: 100vh;
-
-  touch-action: none;
-}
-
-#startModal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-
-  padding: 16px;
-  background: #212121;
-
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-
-  transform: translate(-50%, -50%);
-}
-
-#startModal img {
-  height: 96px;
-}
-
-#startModal h1 {
-  color: white;
-  font-size: 3rem;
-}
-
-#startModal h4 {
-  color: white;
 }
