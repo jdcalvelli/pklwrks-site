@@ -17,7 +17,6 @@ interface C_State {
 }
 
 const C_InfoButton: m.Component<C_Props, C_State> = {
-
 	oncreate: (vnode: m.VnodeDOM<C_Props, C_State>) => {
 		let element = vnode.dom as HTMLElement;
 
@@ -55,11 +54,12 @@ const C_InfoButton: m.Component<C_Props, C_State> = {
 	},
 
 	view: (vnode: m.VnodeDOM<C_Props, C_State>) => {
-		return m("div", {id: "infoButton"}, [
-			vnode.state.isHovered ? m(C_FloatingText, {floatingText: vnode.attrs.floatingText}) : null,
-		])
-	}
-	
-}
+		return m("div", { id: "infoButton" }, [
+			vnode.state.isHovered
+				? m(C_FloatingText, { floatingText: vnode.attrs.floatingText })
+				: null,
+		]);
+	},
+};
 
 export default C_InfoButton;

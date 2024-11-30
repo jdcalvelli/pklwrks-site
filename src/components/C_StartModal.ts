@@ -5,13 +5,11 @@ import m from "mithril";
 import gsap from "gsap";
 
 const C_StartModal: m.Component<{}, {}> = {
-
 	oncreate: (vnode: m.VnodeDOM) => {
-
 		let element = vnode.dom as HTMLElement;
 
 		gsap.set(element, {
-			opacity: 0
+			opacity: 0,
 		});
 
 		gsap.to(element, {
@@ -23,16 +21,15 @@ const C_StartModal: m.Component<{}, {}> = {
 	},
 
 	view: () => {
-		return m("div", {id: "startModal"}, [
-			m("img", {src: pklwrksLogo}),
-			m("div", {class: "inner"}, [
+		return m("div", { id: "startModal" }, [
+			m("img", { src: pklwrksLogo }),
+			m("div", { class: "inner" }, [
 				m("h1", "pklwrks LLC"),
 				m("h4", "what: software and video game engineering"),
-				m("h4", "who: jd@pklwrks.xyz")
-			])
-		])	
-	}
-
-}
+				m("h4", "who: jd@pklwrks.xyz"),
+			]),
+		]);
+	},
+};
 
 export default C_StartModal;

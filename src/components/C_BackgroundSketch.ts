@@ -6,9 +6,7 @@ import { GridElement } from "../classes/GridElement";
 import store from "../stores/store";
 
 const C_BackgroundSketch: m.Component<{}, {}> = {
-
 	oncreate: (vnode: m.VnodeDOM) => {
-
 		// element to put the sketch into!
 		let element = vnode.dom as HTMLElement;
 
@@ -20,7 +18,6 @@ const C_BackgroundSketch: m.Component<{}, {}> = {
 
 		// make a new p5 sketch
 		new p5((p: p5) => {
-
 			let rows: number;
 			let cols: number;
 			let spacingX: number;
@@ -34,8 +31,9 @@ const C_BackgroundSketch: m.Component<{}, {}> = {
 				spacingY = p.windowHeight / 16;
 				rows = p.windowWidth / spacingX;
 				cols = p.windowHeight / spacingY;
-				gridElements = new Array(rows).fill(null).map(() => new Array(cols).fill(null));
-
+				gridElements = new Array(rows)
+					.fill(null)
+					.map(() => new Array(cols).fill(null));
 
 				let currentRow: number = 0;
 				let currentCol: number = 0;
@@ -43,9 +41,9 @@ const C_BackgroundSketch: m.Component<{}, {}> = {
 				for (let xPixel = 0; xPixel < p.windowWidth; xPixel += spacingX) {
 					for (let yPixel = 0; yPixel < p.windowHeight; yPixel += spacingY) {
 						gridElements[currentRow][currentCol] = new GridElement(
-							xPixel, 
-							yPixel, 
-							p.PI, 
+							xPixel,
+							yPixel,
+							p.PI,
 							p.random(0, 1)
 						);
 						currentCol++;
@@ -53,7 +51,7 @@ const C_BackgroundSketch: m.Component<{}, {}> = {
 					currentCol = 0;
 					currentRow++;
 				}
-			}
+			};
 
 			p.draw = () => {
 				p.background("#212121");
@@ -63,33 +61,37 @@ const C_BackgroundSketch: m.Component<{}, {}> = {
 
 				for (let xPixel = 0; xPixel < p.windowWidth; xPixel += spacingX) {
 					for (let yPixel = 0; yPixel < p.windowHeight; yPixel += spacingY) {
-
 						let currentGridElement = gridElements[currentRow][currentCol];
-						let distToMouse = p.dist(currentGridElement.x, currentGridElement.y, p.mouseX, p.mouseY);
+						let distToMouse = p.dist(
+							currentGridElement.x,
+							currentGridElement.y,
+							p.mouseX,
+							p.mouseY
+						);
 
-						if (p.mouseX && p.mouseY && distToMouse < ((spacingX + spacingY) / 2) * 3) {
+						if (
+							p.mouseX &&
+							p.mouseY &&
+							distToMouse < ((spacingX + spacingY) / 2) * 3
+						) {
 							currentGridElement.rot = p.atan2(
-								p.mouseY - currentGridElement.y, 
+								p.mouseY - currentGridElement.y,
 								p.mouseX - currentGridElement.x
 							);
-						}
-						else {
+						} else {
 							currentGridElement.rot = 0;
 						}
 						gridElements[currentRow][currentCol].draw(p, spacingX, spacingY);
 						currentCol++;
-
 					}
 					currentCol = 0;
 					currentRow++;
 				}
-			}
-
+			};
 		}, element);
-
 	},
 
-	view: () => m("#background-sketch")
-}
+	view: () => m("#background-sketch"),
+};
 
 export default C_BackgroundSketch;
