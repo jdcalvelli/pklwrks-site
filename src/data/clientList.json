@@ -46,7 +46,7 @@
 			"natureOfWork": "<web>"
 		},
 		{
-			"href": "mailto:jd@pklwrks.xyz?subject=interest in contracting pklwrks&body=hey pklwrks, i am X person and i'd like to contract you for Y thing. :)",
+			"href": "mailto:jd@pklwrks.dev?subject=interest in contracting pklwrks&body=hey pklwrks, i am X person and i'd like to contract you for Y thing. :)",
 			"linkText": "hopefully you :)",
 			"natureOfWork": "<whatever you want>"
 		}

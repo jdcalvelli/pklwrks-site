@@ -26,7 +26,7 @@ const C_StartModal: m.Component<{}, {}> = {
 			m("div", { class: "inner" }, [
 				m("h1", "pklwrks LLC"),
 				m("h4", "what: software and video game engineering"),
-				m("h4", "who: jd@pklwrks.xyz"),
+				m("h4", "who: jd@pklwrks.dev"),
 			]),
 		]);
 	},
