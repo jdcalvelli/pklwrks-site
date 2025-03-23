@@ -1,0 +1,82 @@
+<footer>
+	<hr/>
+	<div>
+		<p><em>the pklverse</em></p>
+		<p><a href="#">to top</a></p>
+	</div>
+	<nav>
+		<p><a href="https://fridge.pklwrks.dev">fridge</a></p>
+		<p><a href="https://hi.pklwrks.dev">hi</a></p>
+		<!-- <p><a href="https://lights.pklwrks.dev">lights</a></p> -->
+	</nav>
+	<div id="footerSketchCanvas"></div>
+</footer>
+
+<script>
+	import p5 from "p5";
+
+	let sketchCanvas: HTMLElement = document.getElementById("footerSketchCanvas")!;
+	let footerBarWidth = sketchCanvas.clientWidth;
+	let footerBarHeight = sketchCanvas.clientHeight;
+
+	function sketch(p: p5) {
+		let logo: p5.Image;
+
+		p.preload = () => {
+			logo = p.loadImage("logo.png");
+		}
+
+		p.setup = () => {
+			sketchCanvas = document.getElementById("footerSketchCanvas")!;
+			footerBarWidth = sketchCanvas.clientWidth;
+			footerBarHeight = sketchCanvas.clientHeight;
+			p.createCanvas(footerBarWidth, footerBarHeight);
+			p.imageMode(p.CENTER);
+		}
+
+		p.draw = () => {
+			p.background("#FFF8FF");
+			p.tint("#307070");
+			p.image(
+				logo, 
+				p.width / 2,
+				p.height / 2,
+				32,
+				32
+			);
+		}
+
+		p.windowResized = () => {
+			sketchCanvas = document.getElementById("footerSketchCanvas")!;
+			footerBarWidth = sketchCanvas.clientWidth;
+			footerBarHeight = sketchCanvas.clientHeight;
+			p.resizeCanvas(footerBarWidth, footerBarHeight);
+		}
+	}
+
+	new p5(sketch, sketchCanvas);
+</script>
+
+<style>
+	footer {
+		padding-left: 2ch;
+		padding-right: 2ch;
+		padding-bottom: 2ch;
+	}
+	hr {
+		margin-top: 0;
+		margin-bottom: 1ch;
+	}
+	div {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 8px;
+	}
+	nav p {
+		display: inline;
+	}
+	#footerSketchCanvas {
+		width: 100%;
+		height: 64px;
+	}
+</style>

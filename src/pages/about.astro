@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Image from 'astro/components/Image.astro';
+---
+
+<Layout>
+	<section class="intro">
+		<h2>about pklwrks</h2>
+	</section>
+
+	<section class="info">
+		<h3>huh?</h3>
+		<p>
+			pklwrks LLC was founded in brooklyn, ny by john domenico calvelli while he was pursuing 
+			his mfa in game design at new york university. now located in bronxville, ny, pklwrks LLC is 
+			a locus for the sustainable development of experimental, artistically driven interactive work 
+			in community with other developers, local and global. to align with those ideals, pklwrks LLC 
+			is divided into two primary arms: consultancy and studio.
+		</p>
+	</section>
+
+	<section class="info">
+		<h3>what?</h3>
+		<p>
+			as a consultancy, pklwrks LLC works with select clients as both in thought partnership and consultant engineering
+			primarily in the areas of digital game design and development, interactive exhibition design and development,
+			and full stack web design and development. pklwrks LLC uses the revenue from its consulting work as a
+			catalyst for the development of experimental games and the support of the independent game community.
+		</p>
+		<p>
+			as a studio, pklwrks LLC develops digital games and interactive experiences that focus on experimental mechanics,
+			compelling narratives and accessibility of play, with an eye towards games as a medium of poetic expression and 
+			as a vector for learning and the broadening of perspectives. games by pklwrks LLC hope to make you think 
+			about the world just a little bit differently, to maybe learn something that you otherwise didn't know
+			about yourself or others.
+		</p>
+	</section>
+
+	<section class="info">
+		<h3>who?</h3>
+
+		<div class="person">
+			<div class="card">
+				<div>
+					<p>john domenico calvelli</p>
+					<p>founder, studio director, lead software engineer</p>
+					<p>current</p>
+				</div>
+				<Image src="/jd.png" alt="john domenico calvelli's headshot" width="200" height="200"/>
+			</div>
+			<p>
+				john domenico (jd) calvelli is the founder, studio director, and lead software engineer of pklwrks LLC.
+				he is an assistant professor of digital game design and development at long island university. prior,
+				he received his mfa in game design from new york university, worked as a software engineer and data analyst
+				regarding prosocial games for economist steve levitt at the center for risc at uchicago, and got his ba in 
+				modern culture and media and political science at brown university.
+			</p>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.person .card {
+		margin-top: 32px;
+		margin-bottom: 32px;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	.person .card img {
+		border-radius: 16px;
+	}
+</style>

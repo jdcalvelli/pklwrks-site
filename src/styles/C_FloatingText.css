@@ -1,9 +1,0 @@
-/* floating text related */
-
-.floatingText {
-  position: fixed;
-  left: 50%;
-  bottom: 75%;
-
-  transform: translate(-50%, -50%);
-}
