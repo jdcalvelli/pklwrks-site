@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Image from 'astro/components/Image.astro';
+import jd from '../assets/jd.png';
+import anson from '../assets/anson.png';
 ---
 
 <Layout>
@@ -41,12 +43,12 @@ import Image from 'astro/components/Image.astro';
 
 		<div class="person">
 			<div class="card">
-				<div>
+				<div class="personInfo">
 					<p>john domenico calvelli</p>
 					<p>founder, studio director, lead software engineer</p>
 					<p>current</p>
 				</div>
-				<Image src="/jd.png" alt="john domenico calvelli's headshot" width="200" height="200"/>
+				<Image src={jd} alt="john domenico calvelli's headshot" width="200" height="200"/>
 			</div>
 			<p>
 				john domenico (jd) calvelli is the founder, studio director, and lead software engineer of pklwrks LLC.
@@ -54,6 +56,22 @@ import Image from 'astro/components/Image.astro';
 				he received his mfa in game design from new york university, worked as a software engineer and data analyst
 				regarding prosocial games for economist steve levitt at the center for risc at uchicago, and got his ba in 
 				modern culture and media and political science at brown university.
+			</p>
+		</div>
+
+		<div class="person">
+			<div class="card">
+				<div class="personInfo">
+					<p>anson tong</p>
+					<p>board member</p>
+					<p>current</p>
+				</div>
+				<Image src={anson} alt="anson tong's headshot" width="200" height="200"/>
+			</div>
+			<p>
+				anson tong currently serves on the board of pklwrks LLC. she is a behavioral scientist, writer, and 
+				photographer based in chicago. she holds an msc in behavioural science from the london school of 
+				economics and a ba in cognitive science and economics from rice university.
 			</p>
 		</div>
 	</section>
@@ -64,8 +82,12 @@ import Image from 'astro/components/Image.astro';
 		margin-top: 32px;
 		margin-bottom: 32px;
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: center;
 		align-items: center;
+		gap: 32px;
+	}
+	.person .card .personInfo {
+		width: 256px;
 	}
 	.person .card img {
 		border-radius: 16px;

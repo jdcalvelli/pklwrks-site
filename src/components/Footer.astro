@@ -14,6 +14,7 @@
 
 <script>
 	import p5 from "p5";
+	import logoImport from "../assets/logo.png";
 
 	let sketchCanvas: HTMLElement = document.getElementById("footerSketchCanvas")!;
 	let footerBarWidth = sketchCanvas.clientWidth;
@@ -23,7 +24,7 @@
 		let logo: p5.Image;
 
 		p.preload = () => {
-			logo = p.loadImage("logo.png");
+			logo = p.loadImage(logoImport.src);
 		}
 
 		p.setup = () => {
@@ -32,6 +33,17 @@
 			footerBarHeight = sketchCanvas.clientHeight;
 			p.createCanvas(footerBarWidth, footerBarHeight);
 			p.imageMode(p.CENTER);
+
+			// doing it once so that it shows up in the right place post load
+			p.background("#FFF8FF");
+			p.tint("#307070");
+			p.image(
+				logo, 
+				p.width / 2,
+				p.height / 2,
+				32,
+				32
+			);
 		}
 
 		p.draw = () => {
