@@ -1,4 +1,5 @@
 <header>
+	<div id="headerSketchCanvas"></div>
 	<nav>
 		<p><a href="/">home</a></p>
 		<p><a href="/about">about</a></p>
@@ -8,6 +9,63 @@
 		<hr/>
 	</nav>
 </header>
+
+<script>
+	import p5 from "p5";
+	import logoImport from "../assets/logo.png";
+
+	let sketchCanvas: HTMLElement = document.getElementById("headerSketchCanvas")!;
+	let headerBarWidth = sketchCanvas.clientWidth;
+	let headerBarHeight = sketchCanvas.clientHeight;
+
+	function sketch(p: p5) {
+		let logo: p5.Image;
+
+		p.preload = () => {
+			logo = p.loadImage(logoImport.src);
+		}
+
+		p.setup = () => {
+			sketchCanvas = document.getElementById("footerSketchCanvas")!;
+			headerBarWidth = sketchCanvas.clientWidth;
+			headerBarHeight = sketchCanvas.clientHeight;
+			p.createCanvas(headerBarWidth, headerBarHeight);
+			p.imageMode(p.CENTER);
+
+			// doing it once so that it shows up in the right place post load
+			p.background("#FFF8FF");
+			p.tint("#307070");
+			p.image(
+				logo, 
+				p.width / 2,
+				p.height / 2,
+				32,
+				32
+			);
+		}
+
+		p.draw = () => {
+			p.background("#FFF8FF");
+			p.tint("#307070");
+			p.image(
+				logo, 
+				p.width / 2,
+				p.height / 2,
+				32,
+				32
+			);
+		}
+
+		p.windowResized = () => {
+			sketchCanvas = document.getElementById("footerSketchCanvas")!;
+			headerBarWidth = sketchCanvas.clientWidth;
+			headerBarHeight = sketchCanvas.clientHeight;
+			p.resizeCanvas(headerBarWidth, headerBarHeight);
+		}
+	}
+
+	new p5(sketch, sketchCanvas);
+</script>
 
 <style>
 	header {
@@ -27,5 +85,9 @@
 		display: inline;
 		margin-left: 8px;
 		margin-right: 8px;
+	}
+	#headerSketchCanvas {
+		width: 100%;
+		height: 64px;
 	}
 </style>
