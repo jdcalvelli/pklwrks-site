@@ -11,7 +11,7 @@ else
 fi
 
 echo "--- build local ---"
-yarn build > /dev/null
+npm run build > /dev/null
 
 echo "--- launch to endpoint ---"
 ssh root@pklwrks.dev "rm -r sites/pklwrks.dev/*"
