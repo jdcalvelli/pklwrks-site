@@ -14,7 +14,7 @@ echo "--- build local ---"
 npm run build > /dev/null
 
 echo "--- launch to endpoint ---"
-ssh root@pklwrks.dev "rm -r sites/pklwrks.dev/*"
-scp -r ./dist/* root@pklwrks.dev:sites/pklwrks.dev/ > /dev/null
+ssh root@pklwrks.dev "rm -r /var/www/pklwrks.dev/*"
+scp -r ./dist/* root@pklwrks.dev:/var/www/pklwrks.dev/ > /dev/null
 
 echo "--- success ---"
